@@ -1,0 +1,147 @@
+/*
+
+@font-face
+
+font
+
+colors*/
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.4em;
+  background-color: rgb(243, 243, 243);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.content {
+  transition: 1s;
+}
+
+#side-bar {
+  position: absolute;
+  width: 230px;
+  height: 100%;
+  background: #5f5f5f;
+  top: 0;
+  left: -230px;
+  transition: 0.5s ease-out;
+  z-index: 4;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 30px;
+  left: 240px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+
+.toggle-btn span {
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  background: #5f5f5f;
+  display: block;
+  margin-top: 4px;
+  transition: 0.3s ease;
+}
+
+li {
+  color: #292929;
+  list-style: none;
+  cursor: pointer;
+  padding-left: 5px;
+  font-size: 1.5em;
+}
+
+li:hover {
+  background: #292929;
+  color: #fcfcfb;
+}
+
+#side-bar.active {
+  left: 0;
+}
+
+.active span {
+  position: absolute;
+}
+
+.active span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.active span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.active ~ .content {
+  opacity: 0.3;
+}
+
+.targetContainer {
+  color: red;
+  height: 50vh;
+  text-align: center;
+  margin: 20% 5% 50% 50%;
+  display: flex;
+}
+.targetContainer h3 {
+  font-size: 6em;
+}
+
+.homeBody {
+  background-size: 100vh;
+  background-image: url("../../assets/img/bois.jpg");
+  background-repeat: no-repeat;
+}
+
+.blog-container {
+  margin: 20% 5%;
+}
+.blog-container h1 {
+  margin: 5% auto;
+}
+.blog-container div > form {
+  margin: 2%;
+  display: flex;
+  flex-direction: column;
+}
+.blog-container div > form textarea, .blog-container div > form input {
+  border: 2px solid rgb(181, 37, 40);
+  border-radius: 5px;
+  margin: 4%;
+  padding-left: 5%;
+}
+.blog-container div > form textarea {
+  height: 9em;
+  padding-top: 5%;
+}
+.blog-container div > form input {
+  height: 3em;
+}
+.blog-container div > form input[type=submit] {
+  margin-left: auto;
+  width: 50%;
+  background-color: rgba(200, 97, 98, 0.72);
+  color: rgb(84, 83, 83);
+}/*# sourceMappingURL=index.css.map */
