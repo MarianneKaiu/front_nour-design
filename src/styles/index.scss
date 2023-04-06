@@ -1,8 +1,10 @@
 @import './settings';
 
+@import './pages/home';
+@import './pages/notFound';
+@import './pages/blog';
+@import './pages/realisations';
+
 @import './components/burgerMenu';
 @import './components/textTyping';
-
-
-@import './pages/home.scss';
-@import './pages/comment'
+@import './components/noiseSettings';

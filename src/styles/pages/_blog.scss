@@ -1,7 +1,14 @@
 .blog-container {
     margin: 20% 5%;
+    em {
+        font-size: 1rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
     h1 {
-        margin: 5% auto;
+        margin: auto;
+        text-align: center;
     }
     div>form{
         margin: 2%;
@@ -12,15 +19,18 @@
             border: 2px solid $color-1;
             border-radius: 5px;
             margin: 4%;
-            padding-left: 5%;
             
         }
         textarea {
             height: 9em;
             padding-top: 5%;
+            padding: 5%;
         }
         input {
             height: 3em;
+        }
+        input:nth-child(1) {
+            padding: 0 5%;
         }
 
         input[type="submit"]{
@@ -28,6 +38,19 @@
             width: 50%;
             background-color: $color-2;
             color: rgb(84, 83, 83);
+            cursor: pointer;
+            &:hover {
+                filter: brightness(110%);
+            }
+        }
+    }
+    ul {
+        li{
+            margin: 5%;
+            padding: 2%;
+            border-radius: 5px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
     }
 

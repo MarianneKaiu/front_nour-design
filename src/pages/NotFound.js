@@ -3,9 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const NotFound = () => {
     return (
-        <div>
-            <h1>Not found</h1>
-            <h2>Erreur 404</h2>
+        <div className="not-found">
+            <div className="error">Page Not Found</div>
             <NavLink to="/">
                 <button>Retour à l'accueil</button>
             </NavLink>

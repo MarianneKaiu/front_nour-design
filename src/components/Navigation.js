@@ -24,37 +24,45 @@ const Navigation = () => {
                     <li>A propos</li>
                 </NavLink>
                 <NavLink
+                    to="/realisations"
+                    className={(nav) =>
+                        nav.isActive ? "nav-active hover" : "hover"
+                    }
+                >
+                    <li>Réalisations</li>
+                </NavLink>
+                {/* <NavLink
                     to="/actualites"
                     className={(nav) =>
                         nav.isActive ? "nav-active hover" : "hover"
                     }
                 >
                     <li>Actualités</li>
-                </NavLink>
-                <NavLink
+                </NavLink> */}
+                {/* <NavLink
                     to="/amenagement"
                     className={(nav) =>
                         nav.isActive ? "nav-active hover" : "hover"
                     }
                 >
                     <li>Amenagements</li>
-                </NavLink>
-                <NavLink
+                </NavLink> */}
+                {/* <NavLink
                     to="/meubles"
                     className={(nav) =>
                         nav.isActive ? "nav-active hover" : "hover"
                     }
                 >
                     <li>Meubles</li>
-                </NavLink>
-                <NavLink
+                </NavLink> */}
+                {/* <NavLink
                     to="/petitsObjets"
                     className={(nav) =>
                         nav.isActive ? "nav-active hover" : "hover"
                     }
                 >
                     <li>Petits objets</li>
-                </NavLink>
+                </NavLink> */}
                 <NavLink
                     to="/contact"
                     className={(nav) =>
@@ -64,7 +72,7 @@ const Navigation = () => {
                     <li>Contact</li>
                 </NavLink>
                 <NavLink
-                    to="/comment"
+                    to="/blog"
                     className={(nav) =>
                         nav.isActive ? "nav-active hover" : "hover"
                     }

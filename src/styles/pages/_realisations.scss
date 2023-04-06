@@ -1,0 +1,64 @@
+.realisations-container {
+    margin-top: 30%;
+    width: 100%;
+
+.grid-image-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+    .image {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        padding: 0 10%;
+        img{
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(128, 128, 128, 0.19);
+        }
+        .loupe-container {
+            border: none;
+            position: relative;
+            z-index: 4;
+            border-radius: 100%;
+            top: -65px;
+            left: 5px;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(245, 245, 245, 0.346);
+
+            .loupe {
+                font-size: 3em;
+                color: $color-1;
+                rotate: 90deg;
+            }
+            &:hover {
+                transform: scale(1.2);
+        }
+        }
+        #image-content-container {
+            top:-200px;
+            opacity: 0;
+            background-color: rgba(234, 234, 234, 0.657);
+            transition: 1s ease-out;
+            height: 10px;
+            overflow: scroll;
+            padding: 6%;
+            position: relative;
+            
+            h2 {
+                font-style : italic;
+                display: flex;
+                justify-content: end;
+                margin-right: 3%;
+            }
+        }
+        #image-content-container.active {
+            top: -60px;
+            opacity: 1;
+            height: 200px;
+
+        }
+    }
+}
+}

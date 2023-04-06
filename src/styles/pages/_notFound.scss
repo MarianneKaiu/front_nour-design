@@ -1,0 +1,52 @@
+
+        .error {
+        text-align: center;
+        width: 100%;
+        height: 120px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -60px;
+        right: 0;
+        -webkit-animation: noise-3 10s linear infinite; 
+                animation: noise-3 10s linear infinite;
+        overflow: default;
+        @include verticalCenter;
+        
+        &:before {
+                content: 'error 404';
+                font-family: OCR-A;
+                font-size: 100px;
+                text-align: center;
+                width: 550px;
+                margin: auto;
+                position: absolute;
+                top: 25%;
+                bottom: 20;
+                left: 0;
+                right: 35%;
+                opacity: 0;
+                color: $color-1;
+                -webkit-animation: noise-2 7s linear infinite;
+                        animation: noise-2 5s linear infinite;
+                        @include verticalCenter;
+                };
+        &:after {
+                        content: 'error 404';
+                        font-size: 100px;
+                        text-align: center;
+                        width: 550px;
+                        margin: auto;
+                        position: absolute;
+                        top: 25%;
+                        bottom: 0;
+                        left: 10;
+                        right: 35%;
+                        opacity: 0;
+                        color: $color-2;
+                        -webkit-animation: noise-1 7s linear infinite;
+                                animation: noise-1 7s linear infinite;
+                        }
+                        @include verticalCenter;
+        }

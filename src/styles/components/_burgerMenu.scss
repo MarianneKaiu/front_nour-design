@@ -25,6 +25,9 @@
     cursor: pointer;
     height: 50px;
     width: 50px;
+    &:hover {
+        filter: brightness(120%);
+    }
     }
     .toggle-btn span {
     width: 60px;

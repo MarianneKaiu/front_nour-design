@@ -10,6 +10,13 @@ $color-2: rgba(200, 97, 98, 0.72);
 $color-3: #282c34;
 $white: rgb(243, 243, 243);
 
+// mixin
+@mixin verticalCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 // generals
 * {
     box-sizing: border-box;
@@ -22,4 +29,10 @@ html {
 body {
     font-size: 1.4em;
     background-color: $white;
+    margin: 0;
+	padding: 0;
+	line-height: 1.5;
+}
+h1 {
+    @include verticalCenter()
 }

@@ -1,29 +1,45 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./pages/About";
-import Actualities from "./pages/Actualities";
-import Amenagement from "./pages/Amenagement";
-import Comment from "./pages/Comment";
+import Realisations from "./pages/Realisations";
+// import Actualities from "./pages/Actualities";
+// import Amenagement from "./pages/Amenagement";
+import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
-import Meubles from "./pages/Meubles";
+// import Meubles from "./pages/Meubles";
 import NotFound from "./pages/NotFound";
-import PetitsObjets from "./pages/PetitsObjets";
+// import PetitsObjets from "./pages/PetitsObjets";
 
 const App = () => {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        fetch("/api")
+            .then((res) => res.json())
+            .then((data) => setData(data.message));
+    }, []);
+
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/*" element={<NotFound />} />
-                <Route path="/amenagement" element={<Amenagement />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/meubles" element={<Meubles />} />
-                <Route path="/petitsObjets" element={<PetitsObjets />} />
-                <Route path="/apropos" element={<About />} />
-                <Route path="/actualites" element={<Actualities />} />
-                <Route path="/comment" element={<Comment />} />
-            </Routes>
-        </BrowserRouter>
+        <div>
+            <header className="App-header">
+                <p>{!data ? "Loading..." : data}</p>
+            </header>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/*" element={<NotFound />} />
+                    {/* <Route path="/amenagement" element={<Amenagement />} /> */}
+                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/realisations" element={<Realisations />} />
+                    {/* <Route path="/meubles" element={<Meubles />} /> */}
+                    {/* <Route path="/petitsObjets" element={<PetitsObjets />} /> */}
+                    <Route path="/apropos" element={<About />} />
+                    {/* <Route path="/actualites" element={<Actualities />} /> */}
+                    <Route path="/blog" element={<Blog />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
     );
 };
 
