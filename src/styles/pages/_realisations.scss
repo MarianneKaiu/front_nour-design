@@ -16,26 +16,37 @@
             border-radius: 5px;
             box-shadow: 0 2px 6px rgba(128, 128, 128, 0.19);
         }
-        .loupe-container {
-            border: none;
-            position: relative;
-            z-index: 4;
-            border-radius: 100%;
-            top: -65px;
-            left: 5px;
-            width: 60px;
-            height: 60px;
-            background-color: rgba(245, 245, 245, 0.346);
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            .loupe-container {
+                left: 5px;
+                @include realisation_btn_Container;
+                @include realisation_btn;
 
-            .loupe {
-                font-size: 3em;
-                color: $color-1;
-                rotate: 90deg;
+                .loupe {
+                    rotate: 90deg;
+                }
+                
+            
             }
-            &:hover {
-                transform: scale(1.2);
+            .heart-container {
+                right: 5px;
+                @include realisation_btn_Container;
+                @include realisation_btn;
+                
+            }
         }
+        .trash-container {
+            @include realisation_btn_Container;
+            @include realisation_btn;
         }
+        .updateBtn-container {
+            @include realisation_btn_Container;
+            @include realisation_btn;
+        }
+    }
+        
         #image-content-container {
             top:-200px;
             opacity: 0;
@@ -60,5 +71,4 @@
 
         }
     }
-}
 }

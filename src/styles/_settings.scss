@@ -16,6 +16,24 @@ $white: rgb(243, 243, 243);
     justify-content: center;
     align-items: center;
 }
+@mixin realisation_btn_Container {
+    border: none;
+    position: relative;
+    z-index: 4;
+    border-radius: 100%;
+    top: -65px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(245, 245, 245, 0.346);
+}
+@mixin realisation_btn {
+
+    font-size: 3em;
+    color: $color-1;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
 
 // generals
 * {
@@ -25,6 +43,7 @@ $white: rgb(243, 243, 243);
 }
 html {
     font-size: 62.5%;
+    background-color: $white;
 }
 body {
     font-size: 1.4em;
