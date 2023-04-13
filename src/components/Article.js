@@ -56,25 +56,28 @@ const Article = ({ article }) => {
                 )}
             </div>
 
-            <div className="btn-container">
+            <div
+                className="btn-container"
+                onClick={() => {
+                    setIsEditing(true);
+                }}
+            >
                 {!isEditing ? (
-                    <button
-                        onClick={() => {
-                            setIsEditing(true);
-                        }}
-                    >
-                        Edit
+                    <button className="updateBtn-container">
+                        <i class="fa-regular fa-pen-to-square"></i>
                     </button>
                 ) : (
                     <button
+                        className="okBtn-container"
                         onClick={() => {
                             handleUpdate();
                         }}
                     >
-                        Valider
+                        <i class="fa-solid fa-circle-check"></i>
                     </button>
                 )}
                 <button
+                    className="trash-container"
                     onClick={() => {
                         if (
                             window.confirm(
@@ -84,7 +87,7 @@ const Article = ({ article }) => {
                             handleDelete();
                     }}
                 >
-                    Supprimer
+                    <i class="fa-regular fa-trash-can"></i>
                 </button>
             </div>
         </li>

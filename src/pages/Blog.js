@@ -45,7 +45,7 @@ const Blog = () => {
     return (
         <div className="blog-container">
             <BurgerMenu />
-            <h1>BLOG</h1>
+            <h1>vos avis</h1>
             <div>
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <input

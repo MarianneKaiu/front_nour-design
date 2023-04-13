@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const GridImage = ({ image }) => {
     const [toggleLoupe, setToggleLoupe] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
-    const [isAdmin, setIsAdmin] = useState(false);
-
-    useEffect(() => {
-        console.log(image);
-    });
+    // const [isAdmin, setIsAdmin] = useState(false);
 
     return (
         <div className="image">
@@ -29,14 +25,16 @@ const GridImage = ({ image }) => {
                         isLiked ? setIsLiked(false) : setIsLiked(true);
                     }}
                 >
+                    {/* rendu conditionnel coeur plein */}
                     {isLiked ? (
                         <i class="fa-solid fa-heart heart"></i>
                     ) : (
                         <i class="fa-regular fa-heart heart"></i>
                     )}
                 </button>
+
                 <button className="trash-container">
-                    <i class="fa-solid fa-trash"></i>
+                    <i class="fa-regular fa-trash-can"></i>
                 </button>
                 <button className="updateBtn-container">
                     <i class="fa-regular fa-pen-to-square"></i>

@@ -2,6 +2,23 @@
     margin-top: 30%;
     width: 100%;
 
+
+// .gallery {
+// 	display: grid;
+// 	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+// 	gap: 1rem;
+// }
+
+// .portrait {
+// 	grid-row: span 2;
+// }
+
+// .gallery img {
+// 	align-self: stretch;
+// 	justify-self: stretch;
+// 	object-fit: cover;
+// 	border: #00748D 3px solid;
+// }
 .grid-image-container {
     display: flex;
     flex-direction: column;
@@ -21,30 +38,21 @@
             justify-content: space-between;
             .loupe-container {
                 left: 5px;
-                @include realisation_btn_Container;
                 @include realisation_btn;
-
                 .loupe {
                     rotate: 90deg;
                 }
-                
-            
             }
             .heart-container {
                 right: 5px;
-                @include realisation_btn_Container;
                 @include realisation_btn;
                 
             }
+            .trash-container, .updateBtn-container {
+                @include realisation_btn;
+            }
         }
-        .trash-container {
-            @include realisation_btn_Container;
-            @include realisation_btn;
-        }
-        .updateBtn-container {
-            @include realisation_btn_Container;
-            @include realisation_btn;
-        }
+        
     }
         
         #image-content-container {

@@ -1,14 +1,17 @@
-/*
 
-@font-face
 
-font
+//@font-face
 
-colors*/
-$color-1: rgb(181, 37, 40);
-$color-2: rgba(200, 97, 98, 0.72);
-$color-3: #282c34;
-$white: rgb(243, 243, 243);
+//colors
+$color-1: rgb(156, 26, 32);
+$color-2: rgba(156, 26, 33, 0.68);
+
+$black1: rgb(40, 44, 52);
+
+$white1: rgb(243, 243, 243);
+
+$gray1: rgba(245, 245, 245, 0.346);
+$gray2: rgb(95, 95, 95);
 
 // mixin
 @mixin verticalCenter {
@@ -16,7 +19,7 @@ $white: rgb(243, 243, 243);
     justify-content: center;
     align-items: center;
 }
-@mixin realisation_btn_Container {
+@mixin realisation_btn {
     border: none;
     position: relative;
     z-index: 4;
@@ -25,11 +28,24 @@ $white: rgb(243, 243, 243);
     width: 60px;
     height: 60px;
     background-color: rgba(245, 245, 245, 0.346);
-}
-@mixin realisation_btn {
-
     font-size: 3em;
     color: $color-1;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+@mixin blog_btn {
+    border: none;
+    position: relative;
+    z-index: 4;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(245, 245, 245, 0.346);
+    font-size: 1.2em;
+    color: $color-1;
+    cursor: pointer;
     &:hover {
         transform: scale(1.2);
     }
@@ -43,15 +59,18 @@ $white: rgb(243, 243, 243);
 }
 html {
     font-size: 62.5%;
-    background-color: $white;
+    background-color: $white1;
+    
 }
 body {
     font-size: 1.4em;
-    background-color: $white;
+    background-color: $white1;
     margin: 0;
 	padding: 0;
 	line-height: 1.5;
 }
 h1 {
-    @include verticalCenter()
+    text-transform: uppercase;
+    @include verticalCenter();
 }
+

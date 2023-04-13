@@ -1,7 +1,13 @@
-.homeBody{
-
-    background-size: 100vh;
-    background-image: url('../../assets/img/bois.jpg');
-    background-repeat: no-repeat;
-
+.home-Body{
+    @include verticalCenter();
+    display: flex;
+    flex-direction: column;
+    margin-top: 30%;
+    
+    .targetContainer {
+        color: $color-1;
+        display: flex;
+        font-size: 2em;
+    
+    }
 }
