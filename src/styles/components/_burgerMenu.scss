@@ -1,10 +1,4 @@
-    @import url("https://fonts.googleapis.com/css?family=Poppins");
 
-    * {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    }
     .content {
     transition: 1s;
     }
@@ -12,12 +6,16 @@
     position: absolute;
     width: 230px;
     height: 100%;
-    background: $gray2;
+    background: $gray1;
     top: 0;
     left: -230px;
     transition: 0.5s ease-out;
     z-index: 4;
     }
+    #side-bar.active {
+        left: 0;
+    }
+
     .toggle-btn {
     position: absolute;
     top: 30px;
@@ -28,25 +26,24 @@
     &:hover {
         filter: brightness(120%);
     }
+        span {
+            width: 60px;
+            height: 10px;
+            border-radius: 5px;
+            background: $gray2;
+            display: block;
+            margin-top: 4px;
+            transition: 0.3s ease;
+        }
     }
-    .toggle-btn span {
-    width: 60px;
-    height: 10px;
-    border-radius: 5px;
-    background: $gray2;
-    display: block;
-    margin-top: 4px;
-    transition: 0.3s ease;
-    }
+
     li {
     color: $black1;
     list-style: none;
     padding-left: 5px;
     font-size: 1.5em;
     }
-    #side-bar.active {
-    left: 0;
-    }
+
     .active span {
     position: absolute;
     }

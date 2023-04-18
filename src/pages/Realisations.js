@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import BurgerMenu from "../components/BurgerMenu";
 import GridImage from "../components/GridImage";
+import Header from "../components/Header";
 
 const Realisations = () => {
     const [imageData, setImageData] = useState([]);
@@ -13,15 +13,17 @@ const Realisations = () => {
     }, []);
 
     return (
-        <div className="realisations-container">
-            <BurgerMenu />
-            <h1>Nos Réalisations</h1>
-            <div className="grid-image-container">
-                {imageData.map((image) => (
-                    <GridImage key={image.id} image={image} />
-                ))}
-            </div>
-        </div>
+        <>
+            <Header />
+            <main className="realisations-container">
+                <h1>Nos Réalisations</h1>
+                <section className="grid-image-container">
+                    {imageData.map((image) => (
+                        <GridImage key={image.id} image={image} />
+                    ))}
+                </section>
+            </main>
+        </>
     );
 };
 

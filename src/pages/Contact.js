@@ -1,12 +1,14 @@
 import React from "react";
-import BurgerMenu from "../components/BurgerMenu";
+import Header from "../components/Header";
 
 const Contact = () => {
     return (
-        <div>
-            <BurgerMenu />
-            <h1>Contact content</h1>
-        </div>
+        <>
+            <Header />
+            <main className="contact-container">
+                <h1>Contact</h1>
+            </main>
+        </>
     );
 };
 

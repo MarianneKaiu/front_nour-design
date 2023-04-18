@@ -1,12 +1,14 @@
 import React from "react";
-import BurgerMenu from "../components/BurgerMenu";
+import Header from "../components/Header";
 
 const About = () => {
     return (
-        <div>
-            <BurgerMenu />
-            <h1>A PROPOS</h1>
-        </div>
+        <>
+            <Header />
+            <main className="about-container">
+                <h1>A PROPOS</h1>
+            </main>
+        </>
     );
 };
 

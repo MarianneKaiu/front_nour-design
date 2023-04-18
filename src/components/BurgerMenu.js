@@ -13,16 +13,18 @@ const BurgerMenu = () => {
     };
 
     return (
-        <div
-            id="side-bar"
-            className={`${toggleBurgerMenu ? "active" : "hidden"}`}
-        >
-            <div className="toggle-btn" id="btn" onClick={toggleBm}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <Navigation />
+        <div>
+            <aside
+                id="side-bar"
+                className={`${toggleBurgerMenu ? "active" : "hidden"}`}
+            >
+                <div className="toggle-btn" id="btn" onClick={toggleBm}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <Navigation />
+            </aside>
         </div>
     );
 };

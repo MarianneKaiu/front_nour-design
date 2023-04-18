@@ -21,10 +21,10 @@ const App = () => {
     }, []);
 
     return (
-        <div>
-            <header className="App-header">
+        <>
+            <div>
                 <p>{!data ? "Loading..." : data}</p>
-            </header>
+            </div>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -39,7 +39,7 @@ const App = () => {
                     <Route path="/blog" element={<Blog />} />
                 </Routes>
             </BrowserRouter>
-        </div>
+        </>
     );
 };
 

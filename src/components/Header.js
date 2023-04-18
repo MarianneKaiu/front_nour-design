@@ -1,6 +1,7 @@
 import React from "react";
 import BurgerMenu from "./BurgerMenu";
 import Logo from "./Logo";
+import User from "./User";
 
 const Header = () => {
     return (
@@ -8,6 +9,7 @@ const Header = () => {
             <header>
                 <BurgerMenu />
                 <Logo />
+                <User />
             </header>
         </>
     );

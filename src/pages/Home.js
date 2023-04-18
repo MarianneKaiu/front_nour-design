@@ -1,15 +1,15 @@
 import React from "react";
-import BurgerMenu from "../components/BurgerMenu";
 import TextTyping from "../components/TextTyping";
-import Logo from "../components/Logo";
+import Header from "../components/Header";
 
 const Home = () => {
     return (
-        <div className="home-Body">
-            <BurgerMenu />
-            <TextTyping />
-            <Logo />
-        </div>
+        <>
+            <Header />
+            <main>
+                <TextTyping />
+            </main>
+        </>
     );
 };
 

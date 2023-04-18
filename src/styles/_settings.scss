@@ -1,6 +1,7 @@
 
 
 //@font-face
+@import url("https://fonts.googleapis.com/css?family=Poppins");
 
 //colors
 $color-1: rgb(156, 26, 32);
@@ -10,7 +11,7 @@ $black1: rgb(40, 44, 52);
 
 $white1: rgb(243, 243, 243);
 
-$gray1: rgba(245, 245, 245, 0.346);
+$gray1: rgba(159, 159, 159, 0.346);
 $gray2: rgb(95, 95, 95);
 
 // mixin
@@ -51,8 +52,10 @@ $gray2: rgb(95, 95, 95);
     }
 }
 
+
 // generals
 * {
+    font-family: "Poppins", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -72,5 +75,11 @@ body {
 h1 {
     text-transform: uppercase;
     @include verticalCenter();
+}
+em {
+    font-size: 1rem;
+}
+p {
+    font-size: 1.2rem;
 }
 

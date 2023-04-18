@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Article from "../components/Article";
-import BurgerMenu from "../components/BurgerMenu";
+import Header from "../components/Header";
 
 const Blog = () => {
     const [content, setContent] = useState("");
@@ -43,43 +43,50 @@ const Blog = () => {
     };
 
     return (
-        <div className="blog-container">
-            <BurgerMenu />
-            <h1>vos avis</h1>
-            <div>
-                <form onSubmit={(e) => handleSubmit(e)}>
-                    <input
-                        type="text"
-                        value={userName}
-                        placeholder="Votre Nom"
-                        onChange={(e) => setUserName(e.target.value)}
-                    />
-                    <textarea
-                        style={{
-                            border: error ? "1px solid red" : "",
-                        }}
-                        value={content}
-                        placeholder="Votre Message ..."
-                        onChange={(e) => counterContent(e)}
-                    ></textarea>
-                    <p>
-                        {error ? (
-                            `Veuillez écrire un minimum de 130 caractères`
-                        ) : (
-                            <em>{count} / 130</em>
-                        )}
-                    </p>
-                    <input type="submit" value="Envoyer" />
-                </form>
-                <ul>
-                    {blogData
-                        .sort((a, b) => b.createdAt - a.createdAt)
-                        .map((article) => (
-                            <Article key={article.id} article={article} />
-                        ))}
-                </ul>
-            </div>
-        </div>
+        <>
+            <Header />
+            <main className="blog-container">
+                <h1>vos avis</h1>
+                <div>
+                    <form onSubmit={(e) => handleSubmit(e)}>
+                        <input
+                            type="text"
+                            value={userName}
+                            placeholder="Votre Nom"
+                            onChange={(e) => setUserName(e.target.value)}
+                        />
+                        <textarea
+                            style={{
+                                border: error ? "1px solid red" : "",
+                            }}
+                            value={content}
+                            placeholder="Votre Message ..."
+                            onChange={(e) => counterContent(e)}
+                        ></textarea>
+                        <p>
+                            {error ? (
+                                `Veuillez écrire un minimum de 130 caractères`
+                            ) : (
+                                <em>{count} / 130</em>
+                            )}
+                        </p>
+                        <input type="submit" value="Envoyer" />
+                    </form>
+                    <section>
+                        <ul>
+                            {blogData
+                                .sort((a, b) => b.createdAt - a.createdAt)
+                                .map((article) => (
+                                    <Article
+                                        key={article.id}
+                                        article={article}
+                                    />
+                                ))}
+                        </ul>
+                    </section>
+                </div>
+            </main>
+        </>
     );
 };
 
