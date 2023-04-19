@@ -1,10 +1,12 @@
-import React from "react";
-
 const User = () => {
+    //const [modalHidden, setModalHidden] = useState(false);
+
     return (
-        <div>
-            <h1>plop</h1>
-        </div>
+        <>
+            <button>
+                <i class="fa-regular fa-circle-user"></i>
+            </button>
+        </>
     );
 };
 
