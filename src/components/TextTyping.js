@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 
 const TextTyping = () => {
@@ -19,8 +20,9 @@ const TextTyping = () => {
     };
     const removeLetter = () => {
         const removedLetter = document.querySelector(".letter");
-        removedLetter.remove(removedLetter);
+        removedLetter.remove();
     };
+
     const loop = () => {
         setTimeout(() => {
             if (wordIndex === array.length) {
@@ -55,10 +57,12 @@ const TextTyping = () => {
 
 export default TextTyping;
 
+// note que tu as passé quasi 24h pour que ce bout de code soit opérationnel, et qu'il est pas encore au top \o/
+
 // On démarre les compteurs à 0
 
 // on crée des balises span à la volée, auxquelles on attribut une class qui servira a les cibler afin de les supp par la suite
-// la classe l'id target à été attribué a un h3 qui ne contiens pour le moment que un espace
+// l'id target à été attribué a un h3 qui ne contiens pour le moment que un espace
 // on designe letter comme l'enfant de target
 
 // en setTimeout on crée une fonction récursive qui va venir lire chaques lettres du mot actuel et les injecter
@@ -66,4 +70,4 @@ export default TextTyping;
 // on on crée des lettres tant que l'on peut puis on passe au mot suivant et on reeboote letter index
 // entre chaque mots un pause permet de bien lire le mot, puis on l'éfface.
 
-// note que tu as passé quasi 24h pour que ce bout de code soit opérationnel ;)
+///* eslint-disable react-hooks/exhaustive-deps */ m'a permis de faire taire une erreur dans la console qui revennais à chaque fin de tableau...

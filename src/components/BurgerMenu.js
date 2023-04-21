@@ -13,7 +13,7 @@ const BurgerMenu = () => {
     };
 
     return (
-        <div>
+        <>
             <aside
                 id="side-bar"
                 className={`${toggleBurgerMenu ? "active" : "hidden"}`}
@@ -25,7 +25,7 @@ const BurgerMenu = () => {
                 </div>
                 <Navigation />
             </aside>
-        </div>
+        </>
     );
 };
 

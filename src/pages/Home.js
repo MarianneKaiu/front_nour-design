@@ -6,7 +6,11 @@ const Home = () => {
     return (
         <>
             <Header />
-            <main>
+            <main id="home-body">
+                <img
+                    src="./images/Nour-Edde_Desserte-bois-reycle-removebg.png"
+                    alt=""
+                />
                 <TextTyping />
             </main>
         </>

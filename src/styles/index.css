@@ -13,7 +13,6 @@ html {
 
 body {
   font-size: 1.4em;
-  background-color: rgb(243, 243, 243);
   margin: 0;
   padding: 0;
   line-height: 1.5;
@@ -34,15 +33,193 @@ p {
   font-size: 1.2rem;
 }
 
-.home-Body {
+header {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: space-around;
+}
+header .content {
+  transition: 1s;
+}
+header #side-bar {
+  position: absolute;
+  width: 230px;
+  height: 100%;
+  background: rgba(159, 159, 159, 0.346);
+  top: 0;
+  left: -230px;
+  transition: 0.5s ease-out;
+  z-index: 4;
+}
+header #side-bar.active {
+  left: 0;
+}
+header .toggle-btn {
+  border: none;
+  position: relative;
+  z-index: 4;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(245, 245, 245, 0.346);
+  font-size: 1.2em;
+  color: rgb(156, 26, 32);
+  cursor: pointer;
+  position: absolute;
+  left: 240px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+header .toggle-btn:hover {
+  transform: scale(1.2);
+}
+header .toggle-btn:hover {
+  filter: brightness(120%);
+}
+header .toggle-btn span {
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  background: rgb(95, 95, 95);
+  display: block;
+  margin-top: 4px;
+  transition: 0.5s ease;
+}
+header li {
+  color: rgb(40, 44, 52);
+  list-style: none;
+  padding-left: 5px;
+  font-size: 1.5em;
+}
+header .active span {
+  position: absolute;
+}
+header .active span:nth-child(1) {
+  transform: rotate(135deg);
+  transition: 0.5s ease-in;
+}
+header .active span:nth-child(2) {
+  opacity: 0;
+}
+header .active span:nth-child(3) {
+  transform: rotate(-135deg);
+  transition: 0.5s ease-in;
+}
+header .active ~ .content {
+  opacity: 0.3;
+}
+header #user_btn {
+  border: none;
+  position: relative;
+  z-index: 4;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(245, 245, 245, 0.346);
+  font-size: 1.2em;
+  color: rgb(156, 26, 32);
+  cursor: pointer;
+}
+header #user_btn:hover {
+  transform: scale(1.2);
+}
+header #user-modal-container {
+  position: relative;
+  top: -200px;
+}
+header #user-modal-container.active {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 70%;
+  z-index: 5;
+}
+header img.logo {
+  width: 15%;
+  height: auto;
+}
+@keyframes noise-1 {
+  0%, 20%, 40%, 60%, 70%, 90% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+    left: -6px;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+    left: 2px;
+  }
+}
+@keyframes noise-2 {
+  0%, 20%, 40%, 60%, 70%, 90% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+    left: 6px;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+    left: -2px;
+  }
+}
+@keyframes noise {
+  0%, 3%, 5%, 42%, 44%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  4.3% {
+    opacity: 1;
+    transform: scaleY(1.7);
+  }
+  43% {
+    opacity: 1;
+    transform: scaleX(1.5);
+  }
+}
+@keyframes noise-3 {
+  0%, 3%, 5%, 42%, 44%, 100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  3% {
+    opacity: 1;
+    transform: scaleY(4);
+  }
+  43% {
+    opacity: 1;
+    transform: scaleX(10) rotate(60deg);
+  }
+}
+#home-body {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
-  flex-direction: column;
-  margin-top: 30%;
+  max-height: 90%;
+  max-width: 90%;
+  position: relative;
 }
-.home-Body .targetContainer {
+#home-body img {
+  width: 40%;
+}
+#home-body .targetContainer {
+  position: absolute;
+  z-index: 4;
   color: rgb(156, 26, 32);
   display: flex;
   font-size: 2em;
@@ -280,151 +457,4 @@ p {
 
 .contact-container {
   margin: 20% 5%;
-}
-
-header {
-  width: 100%;
-  height: 30%;
-  display: flex;
-  justify-content: space-between;
-}
-header div {
-  width: 20%;
-}
-header .logo {
-  width: 30%;
-  height: auto;
-}
-
-.content {
-  transition: 1s;
-}
-
-#side-bar {
-  position: absolute;
-  width: 230px;
-  height: 100%;
-  background: rgba(159, 159, 159, 0.346);
-  top: 0;
-  left: -230px;
-  transition: 0.5s ease-out;
-  z-index: 4;
-}
-
-#side-bar.active {
-  left: 0;
-}
-
-.toggle-btn {
-  position: absolute;
-  top: 30px;
-  left: 240px;
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-}
-.toggle-btn:hover {
-  filter: brightness(120%);
-}
-.toggle-btn span {
-  width: 60px;
-  height: 10px;
-  border-radius: 5px;
-  background: rgb(95, 95, 95);
-  display: block;
-  margin-top: 4px;
-  transition: 0.3s ease;
-}
-
-li {
-  color: rgb(40, 44, 52);
-  list-style: none;
-  padding-left: 5px;
-  font-size: 1.5em;
-}
-
-.active span {
-  position: absolute;
-}
-
-.active span:nth-child(1) {
-  transform: rotate(45deg);
-}
-
-.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.active span:nth-child(3) {
-  transform: rotate(-45deg);
-}
-
-.active ~ .content {
-  opacity: 0.3;
-}
-@keyframes noise-1 {
-  0%, 20%, 40%, 60%, 70%, 90% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.5;
-    left: -6px;
-  }
-  80% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.6;
-    left: 2px;
-  }
-}
-@keyframes noise-2 {
-  0%, 20%, 40%, 60%, 70%, 90% {
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.5;
-    left: 6px;
-  }
-  80% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.6;
-    left: -2px;
-  }
-}
-@keyframes noise {
-  0%, 3%, 5%, 42%, 44%, 100% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-  4.3% {
-    opacity: 1;
-    transform: scaleY(1.7);
-  }
-  43% {
-    opacity: 1;
-    transform: scaleX(1.5);
-  }
-}
-@keyframes noise-3 {
-  0%, 3%, 5%, 42%, 44%, 100% {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-  3% {
-    opacity: 1;
-    transform: scaleY(4);
-  }
-  43% {
-    opacity: 1;
-    transform: scaleX(10) rotate(60deg);
-  }
 }/*# sourceMappingURL=index.css.map */

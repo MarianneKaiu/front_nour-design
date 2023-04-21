@@ -1,0 +1,56 @@
+<header>
+    <aside id="side-bar">
+        <div className="toggle-btn" id="btn" onClick={toggleBm}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <Navigation />
+    </aside>
+    <button className="user_btn"></button>
+    <div className="user-modal-container">
+        <section className="userModal">
+            <h2>Mon compte</h2>
+            <form>
+                <fieldset>
+                    <legend>J'ai déja un compte</legend>
+                    <input type="text" value={email} placeholder="Mon adresse email" />
+                    <input type="text" value={password} placeholder="Mon mot de passe" />
+                    <input type="submit" value="Se connecter" />
+                </fieldset>
+                <fieldset>
+                    <legend>Je n'ai pas de compte</legend>
+                    <input type="submit" value="Créer un compte" />
+                </fieldset>
+            </form>
+        </section>
+    </div>
+    <div className="navigation">
+        <ul>
+            <NavLink to="/">
+                <li>Accueil</li>
+            </NavLink>
+            <NavLink to="/apropos">
+                <li>A propos</li>
+            </NavLink>
+            <NavLink to="/realisations">
+                <li>Réalisations</li>
+            </NavLink>
+            <NavLink to="/contact">
+                <li>Contact</li>
+            </NavLink>
+            <NavLink to="/blog">
+                <li>Vos avis</li>
+            </NavLink>
+        </ul>
+    </div>
+</header>
+<main className="realisations-container">
+    <h1>Nos Réalisations</h1>
+    <section className="grid-image-container">
+        {imageData.map((image) => (
+        <GridImage key={image.id} image={image} />
+        ))}
+    </section>
+</main>
+</>

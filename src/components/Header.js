@@ -8,8 +8,8 @@ const Header = () => {
         <>
             <header>
                 <BurgerMenu />
-                <Logo />
                 <User />
+                <Logo />
             </header>
         </>
     );

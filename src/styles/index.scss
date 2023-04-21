@@ -1,5 +1,9 @@
 @import './settings';
 
+@import './components/header';
+@import './components/noiseSettings';
+
+
 @import './pages/home';
 @import './pages/notFound';
 @import './pages/blog';
@@ -8,8 +12,5 @@
 @import './pages/contact';
 
 
-@import './components/header';
-@import './components/burgerMenu';
-@import './components/textTyping';
-@import './components/noiseSettings';
+
 

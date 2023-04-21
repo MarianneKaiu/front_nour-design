@@ -1,10 +1,16 @@
-.home-Body{
+#home-body{
     @include verticalCenter();
-    display: flex;
-    flex-direction: column;
-    margin-top: 30%;
+    max-height: 90%;
+    max-width: 90%;
+    position: relative;
+    img {
+        width: 40%;
+    }
+
     
     .targetContainer {
+        position: absolute;
+        z-index: 4;
         color: $color-1;
         display: flex;
         font-size: 2em;
