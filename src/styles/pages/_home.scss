@@ -10,10 +10,12 @@
     
     .targetContainer {
         position: absolute;
+        top: 100%;
         z-index: 4;
         color: $color-1;
         display: flex;
         font-size: 2em;
+        @include verticalCenter();
     
     }
 }

@@ -2,12 +2,16 @@ import React from "react";
 
 function Logo() {
     return (
-        <img
-            className="logo"
-            src="./logo/Nour-Edde_logo.png
+        <div className="logo-container">
+            <h1>Nour Edde</h1>
+            <i class="fa-solid fa-window-minimize fa-rotate-90"></i>
+            <img
+                className="logo"
+                src="./logo/Nour-Edde_logo.png
     "
-            alt="Logo atelier Nour Edde"
-        />
+                alt="Logo atelier Nour Edde"
+            />
+        </div>
     );
 }
 

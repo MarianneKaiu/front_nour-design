@@ -1,10 +1,5 @@
 import axios from "axios";
 import { useState } from "react";
-// import Form from "react-validation/build/form";
-// import Input from "react-validation/build/input";
-// import CheckButton from "react-validation/build/button";
-
-import validator from "validator";
 
 const ConexionModal = () => {
     const [pseudo, setPseudo] = useState("");
@@ -15,9 +10,6 @@ const ConexionModal = () => {
     //useState qui va servir a une ternaire pour afficher un message d'erreur si les passwords 1&2 ne sont pas identiques
     const [validationError, setValidationError] = useState("");
     const [paswordIsOk, setPasswordIsOk] = useState(false);
-
-    //useState qui va verifier que l'email est ok
-    const [emailIsOk, setEmailIsOk] = useState(false);
 
     //useState qui en cas de selection du btn "creer un compte" affichera 2 inputs de plus dans le formulaire pour pseudo et confirmation du mot de passe
     const [newAcount, setNewAcount] = useState(false);
@@ -36,22 +28,10 @@ const ConexionModal = () => {
                     localStorage.setItem("user", JSON.stringify(res.data));
                     console.log(res.data);
                 }
-                return res.data;
             });
         setEmail("");
         setPassword("");
     };
-
-    const emailValidator = (e) => {
-        if (!e.target.value.toString().trim().length) {
-            return "require";
-        } else if (!validator.isEmail(email))
-            return `${email} n'est pas un email valide`;
-        else {
-            setEmailIsOk(true);
-        }
-    };
-
     //Fonction qui vérifie la stricte égalité des password 1&2 en cas de création de compte, puis qui renvoie a la fonction de création de compte si les passwords sont bien égaux
     const passwordEqual = (e) => {
         e.preventDefault();
@@ -66,7 +46,7 @@ const ConexionModal = () => {
     //création de compte du l'utilisateur et login immédiat de celui-ci
     const handleSubmitCreateAcount = (e) => {
         e.preventDefault();
-        if (emailIsOk && paswordIsOk) {
+        if (paswordIsOk) {
             axios
                 .post("/api/users", {
                     userName: pseudo,
@@ -101,9 +81,6 @@ const ConexionModal = () => {
                                 placeholder="Mon Pseudo"
                                 value={pseudo}
                                 onChange={(e) => setPseudo(e.target.value)}
-                                onSubmit={(e) => {
-                                    emailValidator(e);
-                                }}
                             />
                         ) : (
                             ""
@@ -161,17 +138,21 @@ const ConexionModal = () => {
                             />
                         )}
                     </fieldset>
-                    <fieldset>
-                        <legend>Je n'ai pas de compte</legend>
-                        <input
-                            type="submit"
-                            value="Créer un compte"
-                            onClick={(e) => {
-                                setNewAcount(true);
-                                e.preventDefault();
-                            }}
-                        />
-                    </fieldset>
+                    {!newAcount ? (
+                        <fieldset>
+                            <legend>Je n'ai pas de compte</legend>
+                            <input
+                                type="submit"
+                                value="Créer un compte"
+                                onClick={(e) => {
+                                    setNewAcount(true);
+                                    e.preventDefault();
+                                }}
+                            />
+                        </fieldset>
+                    ) : (
+                        ""
+                    )}
                 </form>
             </section>
         </>

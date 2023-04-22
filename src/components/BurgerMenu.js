@@ -19,9 +19,11 @@ const BurgerMenu = () => {
                 className={`${toggleBurgerMenu ? "active" : "hidden"}`}
             >
                 <div className="toggle-btn" id="btn" onClick={toggleBm}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    {!toggleBurgerMenu ? (
+                        <i class="fa-solid fa-bars"></i>
+                    ) : (
+                        <i class="fa-solid fa-xmark"></i>
+                    )}
                 </div>
                 <Navigation />
             </aside>

@@ -3,22 +3,22 @@
     width: 100%;
 
 
-// .gallery {
-// 	display: grid;
-// 	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-// 	gap: 1rem;
-// }
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+	gap: 1rem;
+}
 
-// .portrait {
-// 	grid-row: span 2;
-// }
+.portrait {
+	grid-row: span 2;
+}
 
-// .gallery img {
-// 	align-self: stretch;
-// 	justify-self: stretch;
-// 	object-fit: cover;
-// 	border: #00748D 3px solid;
-// }
+.gallery img {
+	align-self: stretch;
+	justify-self: stretch;
+	object-fit: cover;
+	border: #00748D 3px solid;
+}
 .grid-image-container {
     display: flex;
     flex-direction: column;
@@ -39,6 +39,7 @@
             .loupe-container {
                 left: 5px;
                 @include realisation_btn;
+                top: -65px;
                 .loupe {
                     rotate: 90deg;
                 }
@@ -46,10 +47,11 @@
             .heart-container {
                 right: 5px;
                 @include realisation_btn;
-                
+                top: -65px;
             }
             .trash-container, .updateBtn-container {
                 @include realisation_btn;
+                top: -65px;
             }
         }
         

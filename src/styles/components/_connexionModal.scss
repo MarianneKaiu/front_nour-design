@@ -1,0 +1,15 @@
+section.userModal {
+    display: block;
+    background-color: $gray3;
+    position: fixed;
+    left: 2vw;
+    right: 2vw;
+    input {
+        margin: 10%;
+        height: 4em;
+        width: 80%;
+        @include verticalCenter;
+        align-items: center;
+        padding: 2%;
+    }
+}
