@@ -1,11 +1,20 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getUser } from "../feature/user.slice";
 
 const ConexionModal = () => {
+    const [userId, setUserId] = useState("");
+    const dispatch = useDispatch();
     const [pseudo, setPseudo] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [password2, setPassword2] = useState("");
+
+    useEffect(() => {
+        dispatch(getUser(userId));
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [userId]);
 
     //useState qui va servir a une ternaire pour afficher un message d'erreur si les passwords 1&2 ne sont pas identiques
     const [validationError, setValidationError] = useState("");
@@ -24,10 +33,9 @@ const ConexionModal = () => {
                 password: password,
             })
             .then((res) => {
-                if (res.data.token) {
-                    localStorage.setItem("user", JSON.stringify(res.data));
-                    console.log(res.data);
-                }
+                console.log(res.data);
+                alert(res.data.message);
+                setUserId(res.data.data.userId);
             });
         setEmail("");
         setPassword("");

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const GridImage = ({ image }) => {
     const [toggleLoupe, setToggleLoupe] = useState(false);
     const [isLiked, setIsLiked] = useState(false);
-    // const [isAdmin, setIsAdmin] = useState(false);
+    // const [isAdmin, setIsAdmin] = useState(false)
 
     return (
         <div className="image">

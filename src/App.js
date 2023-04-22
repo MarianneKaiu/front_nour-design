@@ -9,11 +9,13 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 // import Meubles from "./pages/Meubles";
 import NotFound from "./pages/NotFound";
+
 // import PetitsObjets from "./pages/PetitsObjets";
 
 const App = () => {
     const [data, setData] = useState(null);
 
+    //avec ce fetch, je vérifie que le front et le back sont bien connéctés, il me permet d'afficher un "hello from server" si la connexion est ok
     useEffect(() => {
         fetch("/api")
             .then((res) => res.json())
