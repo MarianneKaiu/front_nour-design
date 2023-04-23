@@ -9,25 +9,35 @@ const BurgerMenu = () => {
     const [toggleBurgerMenu, setToggleBurgerMenu] = useState(false);
 
     const toggleBm = () => {
-        setToggleBurgerMenu(!toggleBurgerMenu);
+        if (toggleBurgerMenu === true) setToggleBurgerMenu(false);
+        else {
+            setToggleBurgerMenu(true);
+        }
     };
 
     return (
-        <>
-            <aside
-                id="side-bar"
-                className={`${toggleBurgerMenu ? "active" : "hidden"}`}
+        <div>
+            <div
+                className="toggle-btn"
+                id="btn"
+                onClick={() => {
+                    toggleBm();
+                    console.log("click");
+                }}
             >
-                <div className="toggle-btn" id="btn" onClick={toggleBm}>
-                    {!toggleBurgerMenu ? (
-                        <i class="fa-solid fa-bars"></i>
-                    ) : (
-                        <i class="fa-solid fa-xmark"></i>
-                    )}
-                </div>
+                {!toggleBurgerMenu ? (
+                    <i class="fa-solid fa-bars"></i>
+                ) : (
+                    <i class="fa-solid fa-xmark"></i>
+                )}
+            </div>
+            <div
+                id="side-bar"
+                className={`${toggleBurgerMenu ? "active" : ""}`}
+            >
                 <Navigation />
-            </aside>
-        </>
+            </div>
+        </div>
     );
 };
 

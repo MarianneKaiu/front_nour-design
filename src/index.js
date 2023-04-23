@@ -11,8 +11,6 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 console.log("State init : ", store.getState());
 root.render(
     <Provider store={store}>
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>
+        <App />
     </Provider>
 );

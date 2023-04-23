@@ -38,7 +38,8 @@ li {
 }
 
 header {
-  width: 100%;
+  width: 80%;
+  margin: auto;
   height: 15%;
   display: flex;
   justify-content: space-between;
@@ -49,43 +50,28 @@ header .content {
 }
 header #side-bar {
   position: absolute;
-  width: 35%;
-  top: -50px;
+  width: 20%;
   left: -210px;
+  opacity: 0;
   transition: 0.5s ease-out;
   z-index: 4;
 }
 header #side-bar li {
-  padding: 5%;
+  padding: 3% 0 3% 15%;
   border-radius: 0 25px 25px 0;
   background: rgba(138, 138, 138, 0.915);
   margin: 5% 0;
+  transition: 1s ease;
+  text-align: start;
+}
+header #side-bar li:hover {
+  transform: scaleX(115%);
+  transition: 1s ease;
+  filter: brightness(120%);
 }
 header #side-bar.active {
   left: 0;
-}
-header .toggle-btn {
-  border: none;
-  position: relative;
-  z-index: 4;
-  border-radius: 100%;
-  width: 30px;
-  height: 30px;
-  background-color: rgba(245, 245, 245, 0.346);
-  font-size: 1.2em;
-  color: rgb(156, 26, 32);
-  cursor: pointer;
-  left: 240px;
-  top: 70px;
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-}
-header .toggle-btn:hover {
-  transform: scale(1.2);
-}
-header .toggle-btn:hover {
-  filter: brightness(120%);
+  opacity: 1;
 }
 header li {
   color: rgb(40, 44, 52);
@@ -93,24 +79,23 @@ header li {
   padding-left: 5px;
   font-size: 1.5em;
 }
-header .active span {
-  position: absolute;
-}
-header .active span:nth-child(1) {
-  transform: rotate(135deg);
-  transition: 0.5s ease-in;
-}
-header .active span:nth-child(2) {
-  opacity: 0;
-}
-header .active span:nth-child(3) {
-  transform: rotate(-135deg);
-  transition: 0.5s ease-in;
-}
 header .active ~ .content {
   opacity: 0.3;
 }
-header #side-bar #btn > i {
+header .header_btn-container {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  z-index: 5;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+header .header_btn-container #btn {
+  margin: 18% 0 0 10%;
+  padding: 0;
+}
+header .header_btn-container #btn i {
   border: none;
   position: relative;
   z-index: 4;
@@ -122,10 +107,15 @@ header #side-bar #btn > i {
   color: rgb(156, 26, 32);
   cursor: pointer;
 }
-header #side-bar #btn > i:hover {
+header .header_btn-container #btn i:hover {
   transform: scale(1.2);
 }
-header .user_btn {
+header .header_btn-container #btn i:hover {
+  filter: brightness(120%);
+}
+header .header_btn-container .user_btn {
+  margin: 0;
+  padding: 0;
   border: none;
   position: relative;
   z-index: 4;
@@ -137,8 +127,11 @@ header .user_btn {
   color: rgb(156, 26, 32);
   cursor: pointer;
 }
-header .user_btn:hover {
+header .header_btn-container .user_btn:hover {
   transform: scale(1.2);
+}
+header .header_btn-container .user_btn:hover {
+  filter: brightness(120%);
 }
 header #user-modal-container {
   position: absolute;
@@ -156,7 +149,7 @@ header #user-modal-container.active {
 }
 header .logo-container {
   display: flex;
-  width: 50%;
+  width: 30%;
   justify-content: space-between;
 }
 header .logo-container img.logo {
@@ -393,9 +386,6 @@ section.userModal input {
   color: rgb(156, 26, 32);
   cursor: pointer;
 }
-.blog-container ul .btn-container .updateBtn-container:hover, .blog-container ul .btn-container .okBtn-container:hover, .blog-container ul .btn-container .trash-container:hover {
-  transform: scale(1.2);
-}
 
 .realisations-container {
   margin-top: 20%;
@@ -511,8 +501,33 @@ section.userModal input {
   height: 200px;
 }
 
-.about-container {
-  margin: 20% 5%;
+main.about_main-container {
+  margin: 4% auto;
+  background-color: rgba(156, 26, 33, 0.68);
+  width: 60%;
+  padding: 4%;
+  border-radius: 20px;
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.418);
+}
+main.about_main-container p {
+  text-align: center;
+  margin: 5%;
+}
+
+.about_bg-container {
+  height: 30%;
+  position: relative;
+  bottom: 2px;
+}
+.about_bg-container p {
+  margin-left: 5%;
+  bottom: 0;
+  background-color: whitesmoke;
+  position: absolute;
+}
+.about_bg-container p a {
+  text-decoration: none;
+  color: rgb(95, 95, 95);
 }
 
 .contact-container {

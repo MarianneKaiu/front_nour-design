@@ -1,5 +1,6 @@
 header {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     height: 15%;
     display: flex;
     justify-content: space-between;
@@ -10,73 +11,70 @@ header {
         }
         #side-bar {
             li {
-                padding: 5%;
+                padding: 3% 0 3% 15%;
                 border-radius: 0 25px 25px 0;
                 background: $gray3;
-                margin: 5% 0
+                margin: 5% 0;
+                transition: 1s ease;
+                text-align: start;
+                &:hover {
+                    transform: scaleX(115%);
+                    transition: 1s ease;
+                    filter: brightness(120%)
+                }
             }
         position: absolute;
-        width: 35%;
-        top: -50px;
+        width: 20%;
         left: -210px;
+        opacity: 0;
         transition: 0.5s ease-out;
         z-index: 4;
         }
         #side-bar.active {
             left: 0;
+            opacity: 1
         }
-    
-        .toggle-btn {
-            @include blog_btn;
-        left: 240px;
-        top: 70px;
-        cursor: pointer;
-        height: 50px;
-        width: 50px;
-        &:hover {
-            filter: brightness(120%);
-        }
-        }
-    
+
         li {
         color: $black1;
         list-style: none;
         padding-left: 5px;
         font-size: 1.5em;
         }
-    
-        .active span {
-        position: absolute;
-        }
-        .active span:nth-child(1) {
-        transform: rotate(135deg);
-        transition: 0.5s ease-in;
-    
-        }
-        .active span:nth-child(2) {
-        opacity: 0;
-        }
-        .active span:nth-child(3) {
-        transform: rotate(-135deg);
-        transition: 0.5s ease-in;
-    
-        }
         .active ~ .content {
         opacity: 0.3;
         }
 // FIN BURGER-MENU
 
-// USER-BUTTON
-#side-bar {
-    #btn>i{
+// BUTTONS
+.header_btn-container{
+    cursor: pointer;
+        height: 50px;
+        width: 50px;
+        z-index: 5;
+        display: flex;
+        margin: 0;
+        padding: 0;
+#btn{
+    margin: 18% 0 0 10%;
+    padding: 0;
+i{
         @include realisation_btn;
+        &:hover {
+            filter: brightness(120%);
+        }
+        
+}}
+.user_btn {
+    margin: 0;
+    padding: 0;
+    @include realisation_btn;
+    &:hover {
+        filter: brightness(120%);
     }
 }
-.user_btn {
-    @include realisation_btn;
 }
-
-//FIN USER-BUTTON
+//FIN BUTTONS
 
 // INSCRIPTION/ LOGIN
     #user-modal-container {
@@ -91,7 +89,6 @@ header {
         width: 70%;
         opacity: 1;
         transition: 1s ease-in-out;
-    
         z-index: 5;
     }
 // FIN INSCRIPTION/ LOGIN
@@ -99,7 +96,7 @@ header {
 // LOGO NOUR-EDDE
 .logo-container {
 display: flex;
-width: 50%;
+width: 30%;
 justify-content: space-between;
 
     img.logo {

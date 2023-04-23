@@ -7,8 +7,10 @@ const Header = () => {
     return (
         <>
             <header>
-                <BurgerMenu />
-                <User />
+                <div className="header_btn-container">
+                    <BurgerMenu />
+                    <User />
+                </div>
                 <Logo />
             </header>
         </>

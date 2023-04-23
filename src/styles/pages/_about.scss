@@ -1,3 +1,31 @@
-.about-container {
-    margin: 20% 5%;
+main.about_main-container {
+    margin: 4% auto;
+    background-color: $color-2;
+    width: 60%;
+    padding: 4%;
+    border-radius: 20px;
+
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.418);
+
+    p{
+        text-align: center;
+        margin: 5%;
+    }
+}
+.about_bg-container {
+
+    height: 30%;
+    position: relative;
+    bottom: 2px;
+    
+    p {
+        margin-left: 5%;
+        bottom: 0;
+        background-color: whitesmoke;
+        position: absolute;
+        a {
+            text-decoration: none;
+            color: $gray2;
+        }
+    }
 }

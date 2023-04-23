@@ -47,6 +47,7 @@ const GridImage = ({ image }) => {
             >
                 <div className="image-content-header">
                     <h2>{image.name}</h2>
+                    <h3>{image.id}</h3>
                 </div>
 
                 <p>{image.description}</p>
