@@ -18,15 +18,30 @@ const Article = ({ article }) => {
     };
 
     const handleUpdate = () => {
+        const token = localStorage.getItem("token");
+        const tokenParsed = JSON.parse(token);
+
         const data = {
             userName: article.userName,
             content: updatingContent ? updatingContent : article.content,
             createdAt: article.createdAt,
             uptadedDate: Date.now(),
         };
-        axios.put("/api/comments/" + article.id, data).then(() => {
-            setIsEditing(false);
-        });
+        axios
+            .put(
+                "/api/comments/" + article.id,
+                {
+                    data,
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${tokenParsed}`,
+                    },
+                }
+            )
+            .then(() => {
+                setIsEditing(false);
+            });
     };
     const handleDelete = () => {
         axios

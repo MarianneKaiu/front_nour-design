@@ -20,19 +20,30 @@ const Blog = () => {
     }, []);
 
     const handleSubmit = (e) => {
+        const token = localStorage.getItem("token");
+        const tokenParsed = JSON.parse(token);
+
         e.preventDefault();
         if (content.length < 130) {
             setError(true);
         } else {
-            axios.post("/api/comments", {
-                userName,
-                content,
-                createdAt: Date.now(),
-            });
+            axios.post(
+                "/api/comments",
+                {
+                    userName,
+                    content,
+                    createdAt: Date.now(),
+                },
+                {
+                    headers: {
+                        Authorization: `Bearer ${tokenParsed}`,
+                    },
+                }
+            );
             setError(false);
             setContent("");
             setUserName("");
-            window.location.reload();
+            getData();
         }
     };
 
