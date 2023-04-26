@@ -22,28 +22,30 @@ const Blog = () => {
     const handleSubmit = (e) => {
         const token = localStorage.getItem("token");
         const tokenParsed = JSON.parse(token);
-
         e.preventDefault();
         if (content.length < 130) {
             setError(true);
         } else {
-            axios.post(
-                "/api/comments",
-                {
-                    userName,
-                    content,
-                    createdAt: Date.now(),
-                },
-                {
-                    headers: {
-                        Authorization: `Bearer ${tokenParsed}`,
+            axios
+                .post(
+                    "/api/comments",
+                    {
+                        userName,
+                        content,
+                        createdAt: Date.now(),
                     },
-                }
-            );
-            setError(false);
-            setContent("");
-            setUserName("");
-            getData();
+                    {
+                        headers: {
+                            Authorization: `Bearer ${tokenParsed}`,
+                        },
+                    }
+                )
+                .then(() => {
+                    setError(false);
+                    setContent("");
+                    setUserName("");
+                    getData();
+                });
         }
     };
 
@@ -86,7 +88,7 @@ const Blog = () => {
                     <section>
                         <ul>
                             {blogData
-                                .sort((a, b) => b.createdAt - a.createdAt)
+                                .sort((a, b) => b.id - a.id)
                                 .map((article) => (
                                     <Article
                                         key={article.id}

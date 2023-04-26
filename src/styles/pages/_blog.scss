@@ -67,4 +67,34 @@
         
 
     }
-}
+    @media screen and (min-width:600px) {
+        div>form{
+            align-items: center;
+            textarea, input {
+                width: 80%;
+
+            }input[type="submit"]{
+                margin-right: auto;
+                width: 40%;
+                
+            }
+        
+    }
+    }}
+    @media screen and (min-width:1024px) {
+        .blog-container>div {
+            display: flex;
+            margin: 0;
+            form, section {
+                width: 50%;
+            }
+            form {
+                textarea, input {
+                    margin-right: 10%;
+                }
+            }
+            section {
+                margin-left: auto;
+            }
+        }
+    }

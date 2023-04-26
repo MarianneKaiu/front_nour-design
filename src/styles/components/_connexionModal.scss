@@ -12,4 +12,20 @@ section.userModal {
         align-items: center;
         padding: 2%;
     }
+    div.password {
+
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        
+        button {
+            position: absolute;
+            top: 50%;
+            left: 80%;
+            transform: translateY(-50%);
+        }
+        ul {
+            
+        }
+}
 }

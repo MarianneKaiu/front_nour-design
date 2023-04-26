@@ -82,3 +82,35 @@
         }
     }
 }
+@media screen and (min-width:600px) {
+    .realisations-container .grid-image-container  {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 5%;
+
+        .image {
+            margin: 2%;
+            padding: 0;
+            width: 45%;
+            
+}}}
+@media screen and (min-width:800px) {
+    .realisations-container .grid-image-container  {
+
+
+        .image {
+            width: 28%;
+            
+}}}
+@media screen and (min-width:1024px) {
+    .realisations-container {
+        margin-top: 10%;}
+    .realisations-container .grid-image-container  {
+
+
+        .image {
+            margin: 2%;
+            padding: 0;
+            width: 20%;
+            
+}}}

@@ -128,7 +128,7 @@ const ConexionModal = () => {
                             placeholder="Mon adresse email"
                             onChange={(e) => setEmail(e.target.value)}
                         />
-                        <div>
+                        <div className="password">
                             <input
                                 type={passwordIsVisible ? "text" : "password"}
                                 value={password}
@@ -153,7 +153,7 @@ const ConexionModal = () => {
                             </button>
                         </div>
                         {newAcount ? (
-                            <div>
+                            <div className="password">
                                 <input
                                     type={
                                         password2IsVisible ? "text" : "password"

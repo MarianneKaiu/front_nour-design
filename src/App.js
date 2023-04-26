@@ -25,7 +25,13 @@ const App = () => {
     return (
         <>
             <div>
-                <p>{!data ? "Loading..." : data}</p>
+                <p>
+                    {!data ? (
+                        <i class="fa-solid fa-skull-crossbones"></i>
+                    ) : (
+                        data
+                    )}
+                </p>
             </div>
             <BrowserRouter>
                 <Routes>

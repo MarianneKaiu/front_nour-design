@@ -3,8 +3,8 @@ header {
     margin: auto;
     height: 15%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 // BURGER-MENU
     .content {
         transition: 1s;
@@ -96,13 +96,37 @@ i{
 // LOGO NOUR-EDDE
 .logo-container {
 display: flex;
-width: 30%;
+width: 70%;
 justify-content: space-between;
+margin-left: 30%;
+margin-top: 10%;
 
     img.logo {
         width: 15%;
         height: auto;
     }}
 // FIN LOGO NOUR-EDDE
+}
+@media screen and (min-width:600px)
+{
+    header {
+        flex-direction: row;
+        .logo-container{
+            margin-top: 0;
+    }}
+}
+@media screen and (min-width:1024px)
+{
+    header {
+        justify-content: flex-end;
+        .logo-container {
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        img.logo {
+            width: 10%;
+            height: auto;
+        }
+    }
 }
 

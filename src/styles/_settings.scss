@@ -1,8 +1,12 @@
 
 
 //@font-face
+
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wdth,wght@100,400;114.3,379&display=swap');
+$Font-1: 'Encode Sans SC';
+$Font-2: 'Poppins';
 //colors
 $color-1: rgb(156, 26, 32);
 $color-2: rgba(156, 26, 33, 0.68);
@@ -55,7 +59,7 @@ $gray3:rgba(138, 138, 138, 0.915);
 
 // generals
 * {
-    font-family: "Poppins", sans-serif;
+    font-family: $Font-1, "Poppins", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -71,6 +75,12 @@ body {
 	padding: 0;
 	line-height: 1.5;
 }
+h1, h2, h3, h4, h5, h6,ul li {
+    font-family: $Font-1;
+}
+p, em, a {
+    font-family: $Font-2;
+}
 h1 {
     text-transform: uppercase;
     @include verticalCenter();
@@ -83,5 +93,8 @@ p {
 }
 li{
     list-style-type: none;
+}
+a {
+    text-decoration: none;
 }
 
